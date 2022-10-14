@@ -10,3 +10,6 @@ def sum(a, b):
 
 plus_one = specialize(sum, b=1)
 print(plus_one(10))
+
+just_two = specialize(sum, 1, 1)
+print(just_two())
