@@ -17,10 +17,10 @@ def reverse_dict(dict):
             return_dict[elements[1]] = elements[0]
     return return_dict
 
+
 if __name__ == "__main__":
     import doctest
 
 doctest.testmod()
-
 
 print(reverse_dict({"Ivanov": 97832, "Petrov": 55521, "Kuznecov": 97832}))
