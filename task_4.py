@@ -12,7 +12,10 @@ def reverse_dict(dict):
     items = dict.items()
     for key, element in items:
         if element in return_dict:
-            return_dict[element] = (return_dict[element], key)
+            if isinstance(return_dict[element], tuple):
+                return_dict[element] = (*return_dict[element], key)
+            else:
+                return_dict[element] = (return_dict[element], key)
         else:
             return_dict[element] = key
     return return_dict
@@ -24,3 +27,4 @@ if __name__ == "__main__":
 doctest.testmod()
 
 print(reverse_dict({"Ivanov": 97832, "Petrov": 55521, "Kuznecov": 97832}))
+print(reverse_dict({"Ivanov": 97832, "Petrov": 55521, "Kuznecov": 97832, "Sidorov": 97832}))
