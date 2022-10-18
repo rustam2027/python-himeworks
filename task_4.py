@@ -10,11 +10,11 @@ def reverse_dict(dict):
 
     return_dict = {}
     items = dict.items()
-    for elements in items:
-        if elements[1] in return_dict:
-            return_dict[elements[1]] = (return_dict[elements[1]], elements[0])
+    for key, element in items:
+        if element in return_dict:
+            return_dict[element] = (return_dict[element], key)
         else:
-            return_dict[elements[1]] = elements[0]
+            return_dict[element] = key
     return return_dict
 
 
