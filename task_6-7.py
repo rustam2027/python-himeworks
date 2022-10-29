@@ -1,6 +1,6 @@
 def flatten(arr: list, depth=-2):
-    assert(isinstance(arr, list))
-    
+    assert (isinstance(arr, list))
+
     if depth == -1:
         return arr
     else:
