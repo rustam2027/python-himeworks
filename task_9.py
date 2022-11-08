@@ -1,16 +1,17 @@
 def format_table(name_column, name_line, data):
 
     NAME = "Benchmark"
+    FOUR = 4 # Two spaces and two separators
 
-    # find some lens
+    # Find some lens
     lines_len = []
     lines_len.append(max(len(max(name_column, key=lambda x: len(x))),
-                         len(NAME)) + 4)
+                         len(NAME)) + FOUR)
     for i in range(len(name_line)):
         lines_len.append(max(len(name_line[i]),
-                             len(max(data, key=lambda x: len(str(x[i]))))) + 4)
+                             len(max(data, key=lambda x: len(str(x[i]))))) + FOUR)
 
-    # printing
+    # Printing
     print(f"|{NAME.center(lines_len[0])}|", end="")
     for i in range(len(name_line)):
         print(f"{name_line[i].center(lines_len[i + 1])}|", end="")
